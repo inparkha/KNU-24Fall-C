@@ -3,32 +3,41 @@
 #include <time.h>
 #include <math.h>
 
-int main(void) {
+int main() {
+	int i = 1;
 
 	double x = 0;
 	double y = 0;
-	double pi;
+	double circle = 0;
+	double count = 0;
 
-	int count = 0, circle = 0;
+	srand((double)time(NULL));
 
-	srand(time(NULL));
+	for (i; i <= 100; i++) {
+		while (10000000 * i > count) {
 
-	for (int i = 1; i <= 100; i++) {
-		while (count < 10000000 * i) {
 			x = (double)rand() / (double)RAND_MAX;
 			y = (double)rand() / (double)RAND_MAX;
-			count++;
 
-			if ((x * x) + (y * y) < 1.0) {
+			if (sqrt((x * x) + (y * y)) <= 1) {
 				circle++;
 			}
 
-			pi = 4.0 * circle / count;
+			count++;
+
 		}
-		printf("%d%% 진행 ... 원주율: %f\n", i, pi);
+
+		printf("%d %%진행.. 원주율 : %f ", i, (circle / count) * 4.0);
 
 
+
+		for (int j = 1; j <= i * 20 / 100; j++) {
+			printf("■");
+		}
+		for (int j = 1; j <= 20 - (i * 20 / 100); j++) {
+			printf("□");
+		}
+		printf("\n");
 	}
-	
 
 }
