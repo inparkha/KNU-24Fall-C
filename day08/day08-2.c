@@ -48,7 +48,7 @@ void movePointer(void* array) {
 		target = ((int*)array + n);
 		result = *(int*)target;
 
-		printf("현재위치 : (%d, %d), 배열의 값 : %d\n", (n / 10), (n % 10), n);
+		printf("현재위치 : (%d, %d), 배열의 값 : %d\n", (n / 10), (n % 10), result);
 
 		n += result;
 
